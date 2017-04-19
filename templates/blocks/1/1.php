@@ -27,75 +27,78 @@
     <div class="container-fluid">
         <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="type-1">
-                <!--SLIDESHOW VERTICAL-->
-                <div class="swiper-container" id="swiper-vertical">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-1.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-2.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-3.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-4.jpg" alt=""/>
-                        </div>
+                <div class="mimi">
 
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-2.jpg" alt=""/>
+
+                    <!--SLIDESHOW VERTICAL-->
+                    <div class="swiper-container" id="swiper-vertical">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-1.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-2.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-3.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-2.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-3.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            </div>
+
                         </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-3.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-4.jpg" alt=""/>
-                        </div>
+                        <!-- Add Pagination -->
 
                     </div>
-                    <!-- Add Pagination -->
+                    <!--END SLIDESHOW VERTICAL-->
 
-                </div>
-                <!--END SLIDESHOW VERTICAL-->
-
-                <!--IMAGE-->
-                <div class="img_page">
-                    <img id="main_img" src="images/phone-1.jpg" class="xzoom" xoriginal="images/phone-1.jpg" data-toggle="modal" data-target="#myModal"/>
-                </div>
-                <!--END IMAGE-->
+                    <!--IMAGE-->
+                    <div class="img_page">
+                        <img id="main_img" src="images/phone-1.jpg" class="xzoom" xoriginal="images/phone-1.jpg" data-toggle="modal" data-target="#myModal"/>
+                    </div>
+                    <!--END IMAGE-->
 
 
-                <!--SLIDESHOW HORIZONTAL-->
-                <div class="swiper-container" id="swiper-horizontal">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-1.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-2.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-3.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-4.jpg" alt=""/>
-                        </div>
+                    <!--SLIDESHOW HORIZONTAL-->
+                    <div class="swiper-container" id="swiper-horizontal">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-1.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-2.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-3.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            </div>
 
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-2.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-3.jpg" alt=""/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-2.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-3.jpg" alt=""/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            </div>
                         </div>
                     </div>
+                    <!--END SLIDESHOW HORIZONTAL-->
+                    <div class="clearfix"></div>
                 </div>
-                <!--END SLIDESHOW HORIZONTAL-->
-
-
                 <!--CLICK ZOOM-->
                 <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog">
@@ -103,7 +106,9 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <div id="dialog-form"></div>
+                                <div id="dialog-form">
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,10 +156,6 @@
 <script>
     $(".xzoom").xzoom({zoomHeight: 600, zoomWidth: 500, tint: '#333', Xoffset: 15});
 
-    $(document).ready(function () {
-        $(".img_page").click(function () {
-            $(".type-1").clone().rependTo("#dialog-form");
-        });
-    });
+    $(".mimi").clone().prependTo("#dialog-form");
 
 </script>
