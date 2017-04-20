@@ -10,7 +10,8 @@
   border-color: #e77600;
   box-shadow: 0 0 3px 2px rgba(228,121,17,0.5);
 }
-.type-1 #swiper-vertical {
+.type-1 #swiper-vertical,
+.type-1 #swiper-vertical-2 {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -20,7 +21,8 @@
   height: 260px;
   float: left;
 }
-.type-1 #swiper-vertical .swiper-slide {
+.type-1 #swiper-vertical .swiper-slide,
+.type-1 #swiper-vertical-2 .swiper-slide {
   -webkit-flex-shrink: 0;
   -ms-flex: 0 0 auto;
   flex-shrink: 0;
@@ -41,15 +43,18 @@
   -webkit-align-items: center;
   align-items: center;
 }
-.type-1 #swiper-vertical .swiper-slide img {
+.type-1 #swiper-vertical .swiper-slide img,
+.type-1 #swiper-vertical-2 .swiper-slide img {
   width: 100%;
   height: 100%;
 }
-.type-1 #swiper-vertical .swiper-slide:hover {
+.type-1 #swiper-vertical .swiper-slide:hover,
+.type-1 #swiper-vertical-2 .swiper-slide:hover {
   border-color: #e77600;
   box-shadow: 0 0 3px 2px rgba(228,121,17,0.5);
 }
-.type-1 #swiper-vertical .swiper-wrapper {
+.type-1 #swiper-vertical .swiper-wrapper,
+.type-1 #swiper-vertical-2 .swiper-wrapper {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -ms-flex-direction: column;

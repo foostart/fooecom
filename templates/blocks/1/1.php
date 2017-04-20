@@ -14,7 +14,7 @@
     ?>
     <link href="css/1.css" rel="stylesheet" type="text/css"/>
 
-    
+
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/swiper.min.js" type="text/javascript"></script>
@@ -106,7 +106,7 @@
 
                         <div class="modal-content">
                             <div class="modal-header">
-                             
+
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <div id="dialog-form">
 
@@ -119,7 +119,6 @@
                     </div>
                 </div>
 
-
                 <!--END CLICK ZOOM-->
 
                 <!--SCRIPT SLIDESHOW-->
@@ -130,7 +129,14 @@
                         direction: 'vertical',
                         spaceBetween: 10,
                     });
-                    var swiper = new Swiper('#swiper-horizontal', {
+                    var swiper2 = new Swiper('#swiper-vertical-2', {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                        direction: 'vertical',
+                        spaceBetween: 10,
+                        autoplay: 1
+                    });
+                    var swiper3 = new Swiper('#swiper-horizontal', {
                         pagination: '.swiper-pagination',
                         paginationClickable: true,
                         slidesPerView: 5,
@@ -157,13 +163,18 @@
 </body>
 
 <script>
-    $(".xzoom").xzoom({zoomHeight: 600, zoomWidth: 500, tint: '#333', Xoffset: 15});
-    var x = $(".img-product").clone();
+    $(".xzoom").xzoom({zoomHeight: 600, zoomWidth: 500, tint: '#333', Xoffset: 15});    
+
+    var x = $(".img-product").clone(true);
+    x.find('.hover').removeClass().addClass('click');
+
+    x.find('#main_img').removeAttr("id").attr("id", "main_img2");
+    x.find('.click').click(function () {
+        $('#main_img2').attr('src', $(this).attr('src'));
+        $('#main_img2').attr('xoriginal', $(this).attr('src'));
+    });
+
+    x.find('#swiper-vertical').removeAttr("id").attr("id", "swiper-vertical-2");
+
     x.appendTo("#dialog-form");
-
-    function demo() {
-        var y = $('.modal-header').find('#dialog-form').length;
-        alert(y);
-    }
-
 </script>
