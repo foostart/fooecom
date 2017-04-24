@@ -31,26 +31,26 @@
                     <!--SLIDESHOW VERTICAL-->
                     <div class="swiper-container" id="swiper-vertical">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide active">
-                                <img class="hover" src="images/phone-1.jpg" alt=""/>
+                            <div class="swiper-slide active" data-img="images/product-1.jpg">
+                                <img class="hover" src="images/product-1.jpg" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-2.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-5.jpg">
+                                <img class="hover" src="images/product-5.jpg" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-3.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-6.png">
+                                <img class="hover" src="images/product-6.png" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-4.png">
+                                <img class="hover" src="images/product-4.png" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-2.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-5.jpg">
+                                <img class="hover" src="images/product-5.jpg" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-3.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-6.png">
+                                <img class="hover" src="images/product-6.png" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-4.png">
+                                <img class="hover" src="images/product-4.png" alt=""/>
                             </div>
                         </div>
                         <!-- Add Pagination -->
@@ -60,7 +60,7 @@
 
                     <!--IMAGE-->
                     <div class="img_page" id="myBtn">
-                        <img id="main_img" src="images/phone-1.jpg" class="xzoom" xoriginal="images/phone-1.jpg"/>
+                        <img id="main_img" src="images/product-1.jpg" class="xzoom" xoriginal="images/product-1.jpg"/>
                     </div>
 
                     <!--END IMAGE-->
@@ -69,27 +69,27 @@
                     <!--SLIDESHOW HORIZONTAL-->
                     <div class="swiper-container" id="swiper-horizontal">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide active">
-                                <img class="hover" src="images/phone-1.jpg" alt=""/>
+                            <div class="swiper-slide active" data-img="images/product-1.jpg">
+                                <img class="hover" src="images/product-1.jpg" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-2.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-5.jpg">
+                                <img class="hover" src="images/product-5.jpg" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-3.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-6.png">
+                                <img class="hover" src="images/product-6.png" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-4.png">
+                                <img class="hover" src="images/product-4.png" alt=""/>
                             </div>
 
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-2.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-5.jpg">
+                                <img class="hover" src="images/product-5.jpg" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-3.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-6.png">
+                                <img class="hover" src="images/product-6.png" alt=""/>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="hover" src="images/phone-4.jpg" alt=""/>
+                            <div class="swiper-slide" data-img="images/product-4.png">
+                                <img class="hover" src="images/product-4.png" alt=""/>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                             <div class="modal-header">
 
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              
+
                                 <div id="dialog-form">
 
                                 </div>
@@ -144,7 +144,7 @@
                 <!--END SCRIPT SLIDESHOW-->
             </div>  
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="" style="margin-top: 80px">
                 demo demo demo
             </div>
@@ -155,13 +155,21 @@
 </body>
 
 <script>
+    
+    var get_img = $('.swiper-slide').data("img");
+    
+    $('.swiper-slide').hover(function () {
+        get_img = $(this).data("img");
+    })
+
     $("#myBtn").click(function () {
+        $('#main_img2').attr('src', get_img);
+       
         new Swiper('#swiper-vertical-2', {
             slidesPerView: 4,
             direction: 'vertical',
             spaceBetween: 10,
         });
-
         new Swiper('#swiper-horizontal-2', {
             slidesPerView: 5,
             spaceBetween: 10,
@@ -178,11 +186,12 @@
         });
         $("#myModal").modal();
     });
-
+   
     var x = $(".img-product").clone(true);
     x.find('.hover').removeClass().addClass('click');
+    x.find('#main_img').removeClass();
     x.find('#main_img').removeAttr("id").attr("id", "main_img2");
-    x.find('.click').hover(function () {
+    x.find('.click').click(function () {
         $('#main_img2').attr('src', $(this).attr('src'));
     });
     x.find('#swiper-vertical').removeAttr("id").attr("id", "swiper-vertical-2");
@@ -193,7 +202,6 @@
         $(".swiper-slide").removeClass('active');
         $(this).addClass('active');
     });
-
+    
     $(".xzoom").xzoom({zoomHeight: 600, zoomWidth: 500, tint: '#333', Xoffset: 15});
-
 </script>

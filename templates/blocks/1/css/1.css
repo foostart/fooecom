@@ -1,6 +1,9 @@
 .type-1 {
   padding-top: 50px;
 }
+.type-1 .img_page img {
+  width: 100% !important;
+}
 .type-1 .swiper-slide {
   border: 1px solid #d9d9d9;
   border-radius: 2px;
@@ -101,8 +104,21 @@
   display: flex;
   box-sizing: content-box;
 }
-.type-1 .img_page img {
-  width: 100%;
+.type-1 #dialog-form .zoom {
+  display: inline-block;
+  position: relative;
+}
+.type-1 #dialog-form .zoom:after {
+  content: '';
+  display: block;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.type-1 #dialog-form .zoom img {
+  display: block;
 }
 @media (min-width: 992px) {
   .type-1 #swiper-vertical {
