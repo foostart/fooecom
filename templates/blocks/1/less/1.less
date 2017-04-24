@@ -10,7 +10,10 @@
         border-color: #e77600;
         box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
     }
-
+   .active{
+        border-color: #e77600;
+        box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+    }
     #swiper-vertical, #swiper-vertical-2{
         margin-left:auto;
         margin-right:auto;
@@ -44,14 +47,10 @@
             align-items: center;
 
             img{
-                width: 100%;
                 height: 100%;               
             }
         }
-        .swiper-slide:hover{
-            border-color: #e77600;
-            box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
-        }
+
         .swiper-wrapper{
             -webkit-box-orient:vertical;
             -moz-box-orient:vertical;
@@ -60,23 +59,19 @@
             flex-direction:column
         }
     }
-    #swiper-horizontal{
+    #swiper-horizontal, #swiper-horizontal-2{
         margin-left:auto;
         margin-right:auto;
         position:relative;
         overflow:hidden;
         z-index:1;
-        width: 90%;
         height: 10%;   
         .swiper-slide {
             text-align: center;
             font-size: 18px;
-            background: red;
             flex-shrink:0;
             position:relative;
             margin:  2px 0;
-
-            /* Center slide text vertically */
             display: -webkit-box;
             display: -ms-flexbox;
             display: -webkit-flex;
@@ -89,13 +84,10 @@
             -ms-flex-align: center;
             -webkit-align-items: center;
             align-items: center;
-
             img{
-                width: 100%;
                 height: 100%;               
             }
         }
-
         .swiper-wrapper{
             position:relative;
             width:100%;
@@ -112,7 +104,7 @@
         }
     }
 
-
+    #dialog-form{}
 
     @media (min-width: 992px){
         #swiper-vertical{
@@ -123,10 +115,14 @@
         }
         .img_page{
             width: 85%;
-            float: right;
-            img{
-                width: 100%;
-/*                padding-left: 30px;*/
+            float: right;      
+        }
+        img{
+            width: 100%;
+        }
+        #dialog-form{
+            #swiper-horizontal-2{
+                display: none;
             }
         }
     }
@@ -136,6 +132,11 @@
         }
         #swiper-horizontal{
             display: block;
+        }
+        #dialog-form{
+            #swiper-vertical-2{
+                display: none;
+            }
         }
     }
     @media (max-width: 768px) and (min-width: 480px){
