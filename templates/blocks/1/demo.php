@@ -16,7 +16,7 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.zoom.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-
+    <script src="js/jquery.zoom.js" type="text/javascript"></script>
     <style>
         .zoom {
             display:inline-block;
@@ -34,6 +34,12 @@
         .zoom img {
             display: block;
         }
+        .zoom:hover {
+            cursor: zoom-out;
+        }
+        .zoomed {
+            cursor: zoom-in !important;
+        }
         img{
             width: 100%;
         }
@@ -44,7 +50,7 @@
     <div class="container">
         <div class="col-md-4">
             <div class='zoom'>
-                <img src="images/phone-1.jpg" alt=""/>
+                <img src="images/product-1.jpg" alt=""/>
             </div>
         </div>
 
@@ -54,5 +60,20 @@
 <script>
     $(document).ready(function () {
         $('.zoom').zoom({on: 'click'});
+        var clicked = false;
+        $(".zoom").hover(function () {
+            if ($(this).hasClass("zoomed")) {
+                $(this).removeClass("zoomed");
+            } else {
+                $(this).addClass("zoomed");
+            }
+        });
+        $(".zoom").click(function () {
+            if ($(this).hasClass("zoomed")) {
+                $(this).removeClass("zoomed");
+            } else {
+                $(this).addClass("zoomed");
+            }
+        });
     });
 </script>

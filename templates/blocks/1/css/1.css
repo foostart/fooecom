@@ -1,9 +1,6 @@
 .type-1 {
   padding-top: 50px;
 }
-.type-1 .img_page img {
-  width: 100% !important;
-}
 .type-1 .swiper-slide {
   border: 1px solid #d9d9d9;
   border-radius: 2px;
@@ -119,6 +116,12 @@
 }
 .type-1 #dialog-form .zoom img {
   display: block;
+}
+.type-1 #dialog-form .zoom:hover {
+  cursor: zoom-out;
+}
+.type-1 #dialog-form .zoomed {
+  cursor: zoom-in !important;
 }
 @media (min-width: 992px) {
   .type-1 #swiper-vertical {
