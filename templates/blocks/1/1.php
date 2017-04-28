@@ -19,6 +19,7 @@
     <script src="js/swiper.min.js" type="text/javascript"></script>
     <script src="js/xzoom.min.js" type="text/javascript"></script>
     <script src="js/1.js" type="text/javascript"></script>
+    <script src="js/jquery.zoom.js" type="text/javascript"></script>
 
 </head>
 
@@ -120,7 +121,6 @@
                 <script>
                     var swiper = new Swiper('#swiper-vertical', {
                         slidesPerView: 4,
-
                         direction: 'vertical',
                         spaceBetween: 10,
                     });
@@ -194,7 +194,27 @@
 
     var x = $(".img-product").clone(true);
     x.find('.hover').removeClass().addClass('click');
-    x.find('#main_img').removeClass();
+
+    x.find('.img_page').addClass('zoom');
+    x.find('.img_page').ready(function () {
+        $('.zoom').zoom({on: 'click'});
+        var clicked = false;
+        $(".zoom").hover(function () {
+            if ($(this).hasClass("zoomed")) {
+                $(this).removeClass("zoomed");
+            } else {
+                $(this).addClass("zoomed");
+            }
+        });
+        $(".zoom").click(function () {
+            if ($(this).hasClass("zoomed")) {
+                $(this).removeClass("zoomed");
+            } else {
+                $(this).addClass("zoomed");
+            }
+        });
+    });
+
     x.find('#main_img').removeAttr("id").attr("id", "main_img2");
     x.find('.click').click(function () {
         $('#main_img2').attr('src', $(this).attr('src'));
@@ -208,5 +228,9 @@
         $(this).addClass('active');
     });
 
+<<<<<<< HEAD
     $(".xzoom").xzoom({tint: '#333', Xoffset: 15});
+=======
+    $(".xzoom").xzoom({zoomHeight: 580, zoomWidth: 500, tint: '#333', Xoffset: 15});
+>>>>>>> origin/master
 </script>
