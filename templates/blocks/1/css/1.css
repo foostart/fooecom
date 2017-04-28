@@ -24,7 +24,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  width: 12%;
+  width: 15%;
   height: 260px;
   float: left;
 }
@@ -70,6 +70,7 @@
   overflow: hidden;
   z-index: 1;
   height: 10%;
+  margin-top: 10px;
 }
 .type-1 #swiper-horizontal .swiper-slide,
 .type-1 #swiper-horizontal-2 .swiper-slide {
@@ -128,7 +129,7 @@
     display: none;
   }
   .type-1 .img_page {
-    width: 85%;
+    width: 82%;
     float: right;
   }
   .type-1 img {

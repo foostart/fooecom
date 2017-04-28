@@ -23,10 +23,9 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="type-1">
-
                 <div class="img-product">
                     <!--SLIDESHOW VERTICAL-->
                     <div class="swiper-container" id="swiper-vertical">
@@ -150,21 +149,27 @@
             </div>
 
         </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <p style="width: 100%; padding: 150px;"> Content </p>
+    <p style="width: 100%; padding: 150px;"> Content </p>
+    <p style="width: 100%; padding: 150px;"> Content </p>
 
 
 </body>
 
 <script>
-    
+
     var get_img = $('.swiper-slide').data("img");
-    
+
     $('.swiper-slide').hover(function () {
         get_img = $(this).data("img");
     })
 
     $("#myBtn").click(function () {
         $('#main_img2').attr('src', get_img);
-       
+
         new Swiper('#swiper-vertical-2', {
             slidesPerView: 4,
             direction: 'vertical',
@@ -186,7 +191,7 @@
         });
         $("#myModal").modal();
     });
-   
+
     var x = $(".img-product").clone(true);
     x.find('.hover').removeClass().addClass('click');
     x.find('#main_img').removeClass();
@@ -202,6 +207,6 @@
         $(".swiper-slide").removeClass('active');
         $(this).addClass('active');
     });
-    
-    $(".xzoom").xzoom({zoomHeight: 600, zoomWidth: 500, tint: '#333', Xoffset: 15});
+
+    $(".xzoom").xzoom({tint: '#333', Xoffset: 15});
 </script>

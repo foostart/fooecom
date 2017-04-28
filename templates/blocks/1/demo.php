@@ -44,7 +44,7 @@
     <div class="container">
         <div class="col-md-4">
             <div class='zoom'>
-                <img src="images/phone-1.jpg" alt=""/>
+                <img src="images/product-1.jpg" alt=""/>
             </div>
         </div>
 
