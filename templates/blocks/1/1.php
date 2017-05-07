@@ -162,6 +162,7 @@
 <script>
 
     var get_img = $('.swiper-slide').data("img");
+ 
 
     $('.swiper-slide').hover(function () {
         get_img = $(this).data("img");
@@ -193,6 +194,7 @@
     });
 
     var x = $(".img-product").clone(true);
+    
     x.find('.hover').removeClass().addClass('click');
 
     x.find('.img_page').addClass('zoom');
@@ -221,6 +223,7 @@
     });
     x.find('#swiper-vertical').removeAttr("id").attr("id", "swiper-vertical-2");
     x.find('#swiper-horizontal').removeAttr("id").attr("id", "swiper-horizontal-2");
+    
     x.appendTo("#dialog-form");
 
     $(".swiper-slide").hover(function () {
@@ -228,9 +231,9 @@
         $(this).addClass('active');
     });
 
-<<<<<<< HEAD
+
     $(".xzoom").xzoom({tint: '#333', Xoffset: 15});
-=======
+
     $(".xzoom").xzoom({zoomHeight: 580, zoomWidth: 500, tint: '#333', Xoffset: 15});
->>>>>>> origin/master
+
 </script>
