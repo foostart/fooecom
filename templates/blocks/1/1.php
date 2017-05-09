@@ -129,7 +129,7 @@
                 <script>
                     var swiper = new Swiper('#swiper-vertical', {
                         slidesPerView: 4,
-                        loop: true,
+//                        loop: true,
                         direction: 'vertical',
                         spaceBetween: 10,
                         nextButton: '.swiper-button-next-1',
@@ -140,7 +140,7 @@
                         spaceBetween: 10,
                         nextButton: '.swiper-button-next-3',
                         prevButton: '.swiper-button-prev-3',
-                        loop: true,
+//                        loop: true,
                         breakpoints: {
                             1024: {
                                 slidesPerView: 3,
@@ -187,19 +187,18 @@
 
         new Swiper('#swiper-vertical-2', {
             slidesPerView: 4,
-            loop: true,
+//            loop: true,
             direction: 'vertical',
             spaceBetween: 10,
             nextButton: '.swiper-button-next-2',
             prevButton: '.swiper-button-prev-2'
-
         });
         new Swiper('#swiper-horizontal-2', {
             slidesPerView: 5,
             spaceBetween: 10,
             nextButton: '.swiper-button-next-4',
             prevButton: '.swiper-button-prev-4',
-            loop: true,
+//            loop: true,
             breakpoints: {
                 1024: {
                     slidesPerView: 4,
@@ -236,5 +235,5 @@
         $(this).addClass('active');
     });
 
-    $(".xzoom").xzoom({tint: '#333', Xoffset: 15});
+    $(".xzoom").xzoom({zoomHeight: 400, zoomWidth: 500, tint: '#333', Xoffset: 15});
 </script>
