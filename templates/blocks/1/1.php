@@ -202,7 +202,7 @@
     });
 
 
-    $(".modal-header").hover(function () {  
+    $(".modal-dialog").hover(function () {  
         new Swiper('#swiper-vertical-2', {
             slidesPerView: 4,
             loop: true,
