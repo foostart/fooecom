@@ -18,7 +18,7 @@
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/swiper.min.js" type="text/javascript"></script>
     <script src="js/xzoom.min.js" type="text/javascript"></script>
-    <script src="js/1.js" type="text/javascript"></script>
+    <script src="js/1_hover.js" type="text/javascript"></script>
 
 </head>
 
@@ -26,7 +26,7 @@
     <div class="container">
         <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="type-1">
-                <div class="img-product">
+                <div class="img-product demo">
                     <!--SLIDESHOW VERTICAL-->
                     <div class="swiper-container" id="swiper-vertical">
                         <div class="swiper-wrapper">
@@ -129,7 +129,7 @@
                 <script>
                     var swiper = new Swiper('#swiper-vertical', {
                         slidesPerView: 4,
-//                        loop: true,
+                        loop: true,
                         direction: 'vertical',
                         spaceBetween: 10,
                         nextButton: '.swiper-button-next-1',
@@ -140,7 +140,7 @@
                         spaceBetween: 10,
                         nextButton: '.swiper-button-next-3',
                         prevButton: '.swiper-button-prev-3',
-//                        loop: true,
+                        loop: true,
                         breakpoints: {
                             1024: {
                                 slidesPerView: 3,
@@ -152,7 +152,7 @@
                             },
                         }
                     });
-
+     
                 </script>
                 <!--END SCRIPT SLIDESHOW-->
             </div>
@@ -175,19 +175,37 @@
 </body>
 
 <script>
+    var x = $(".img-product").clone(true);
+
+    x.find('.hover').removeClass().addClass('click');
+    x.find('#main_img').removeClass();
+    x.find('#main_img').removeAttr("id").attr("id", "main_img2");
+    x.find('.click').click(function () {
+        $('#main_img2').attr('src', $(this).attr('src'));
+    });
+    x.find('#swiper-vertical').removeAttr("id").attr("id", "swiper-vertical-2");
+    x.find('.swiper-button-next-1').removeClass().addClass('swiper-button-next-2');
+    x.find('.swiper-button-prev-1').removeClass().addClass('swiper-button-prev-2');
+
+    x.find('#swiper-horizontal').removeAttr("id").attr("id", "swiper-horizontal-2");
+    x.find('.swiper-button-next-3').removeClass().addClass('swiper-button-next-4');
+    x.find('.swiper-button-prev-3').removeClass().addClass('swiper-button-prev-4');
+
+    x.appendTo("#dialog-form");
+
+
 
     var get_img = $('.swiper-slide').data("img");
 
     $('.swiper-slide').hover(function () {
         get_img = $(this).data("img");
-    })
+    });
 
-    $("#myBtn").click(function () {
-        $('#main_img2').attr('src', get_img);
 
+    $(".modal-header").hover(function () {  
         new Swiper('#swiper-vertical-2', {
             slidesPerView: 4,
-//            loop: true,
+            loop: true,
             direction: 'vertical',
             spaceBetween: 10,
             nextButton: '.swiper-button-next-2',
@@ -198,7 +216,7 @@
             spaceBetween: 10,
             nextButton: '.swiper-button-next-4',
             prevButton: '.swiper-button-prev-4',
-//            loop: true,
+            loop: true,
             breakpoints: {
                 1024: {
                     slidesPerView: 4,
@@ -210,30 +228,20 @@
                 },
             }
         });
+    });
+
+    $("#myBtn").click(function () {
+        $('#main_img2').attr('src', get_img);
+
         $("#myModal").modal();
     });
-
-    var x = $(".img-product").clone(true);
-    x.find('.hover').removeClass().addClass('click');
-    x.find('#main_img').removeClass();
-    x.find('#main_img').removeAttr("id").attr("id", "main_img2");
-    x.find('.click').click(function () {
-        $('#main_img2').attr('src', $(this).attr('src'));
-    });
-    x.find('#swiper-vertical').removeAttr("id").attr("id", "swiper-vertical-2");
-    x.find('.swiper-button-next-1').removeClass().addClass('swiper-button-next-2');
-    x.find('.swiper-button-prev-1').removeClass().addClass('swiper-button-prev-2');
-
-
-    x.find('#swiper-horizontal').removeAttr("id").attr("id", "swiper-horizontal-2");
-    x.find('.swiper-button-next-3').removeClass().addClass('swiper-button-next-4');
-    x.find('.swiper-button-prev-3').removeClass().addClass('swiper-button-prev-4');
-    x.appendTo("#dialog-form");
 
     $(".swiper-slide").hover(function () {
         $(".swiper-slide").removeClass('active');
         $(this).addClass('active');
+
     });
 
     $(".xzoom").xzoom({zoomHeight: 400, zoomWidth: 500, tint: '#333', Xoffset: 15});
+
 </script>
