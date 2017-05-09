@@ -1,79 +1,36 @@
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery zoomIn Plugin Demos</title>
 
-    <?php
-    if (!class_exists('lessc')) {
-        include ('./libs/lessc.inc.php');
-    }
-    $less = new lessc;
-    $less->compileFile('less/1.less', 'css/1.css');
-    ?>
-    <link href="css/1.css" rel="stylesheet" type="text/css"/>
-
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/jquery.zoom.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/jquery.zoom.js" type="text/javascript"></script>
     <style>
-        .zoom {
-            display:inline-block;
+        .zoomIn {
+            display: inline-block;
             position: relative;
+            border: 1px solid gray;
+            overflow: hidden;
+            cursor: pointer;
         }
-        .zoom:after {
-            content:'';
-            display:block; 
-            width:33px; 
-            height:33px; 
-            position:absolute; 
-            top:0;
-            right:0;
-        }
-        .zoom img {
-            display: block;
-        }
-        .zoom:hover {
-            cursor: zoom-out;
-        }
-        .zoomed {
-            cursor: zoom-in !important;
-        }
-        img{
-            width: 100%;
+        .zoomIn > img {
+            max-height: 400px;
         }
     </style>
+    
 </head>
-
 <body>
-    <div class="container">
-        <div class="col-md-4">
-            <div class='zoom'>
-                <img src="images/product-1.jpg" alt=""/>
-            </div>
-        </div>
+<img src="images/product-1.jpg" width="400" height="400">
 
-    </div>
-</body>
 
+<script src="js/jquery-2.1.4.min.js"></script>
+
+<script src="js/zoomIn.js"></script>
 <script>
-    $(document).ready(function () {
-        $('.zoom').zoom({on: 'click'});
-        var clicked = false;
-        $(".zoom").hover(function () {
-            if ($(this).hasClass("zoomed")) {
-                $(this).removeClass("zoomed");
-            } else {
-                $(this).addClass("zoomed");
-            }
-        });
-        $(".zoom").click(function () {
-            if ($(this).hasClass("zoomed")) {
-                $(this).removeClass("zoomed");
-            } else {
-                $(this).addClass("zoomed");
-            }
-        });
+    $(function () {
+        $('img').zoomIn();
     });
 </script>
+</body>
+</html>

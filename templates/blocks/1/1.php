@@ -2,12 +2,12 @@
     <meta charset="UTF-8">
     <title></title>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/> 
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
 
     <?php
     if (!class_exists('lessc')) {
-        include ('./libs/lessc.inc.php');
+        include('./libs/lessc.inc.php');
     }
     $less = new lessc;
     $less->compileFile('less/1.less', 'css/1.css');
@@ -19,7 +19,6 @@
     <script src="js/swiper.min.js" type="text/javascript"></script>
     <script src="js/xzoom.min.js" type="text/javascript"></script>
     <script src="js/1.js" type="text/javascript"></script>
-    <script src="js/jquery.zoom.js" type="text/javascript"></script>
 
 </head>
 
@@ -43,6 +42,9 @@
                             <div class="swiper-slide" data-img="images/product-4.png">
                                 <img class="hover" src="images/product-4.png" alt=""/>
                             </div>
+                            <div class="swiper-slide" data-img="images/product-1.jpg">
+                                <img class="hover" src="images/product-1.jpg" alt=""/>
+                            </div>
                             <div class="swiper-slide" data-img="images/product-5.jpg">
                                 <img class="hover" src="images/product-5.jpg" alt=""/>
                             </div>
@@ -54,7 +56,8 @@
                             </div>
                         </div>
                         <!-- Add Pagination -->
-
+                        <div class="swiper-button-next-1"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+                        <div class="swiper-button-prev-1"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
                     </div>
                     <!--END SLIDESHOW VERTICAL-->
 
@@ -81,7 +84,9 @@
                             <div class="swiper-slide" data-img="images/product-4.png">
                                 <img class="hover" src="images/product-4.png" alt=""/>
                             </div>
-
+                            <div class="swiper-slide active" data-img="images/product-1.jpg">
+                                <img class="hover" src="images/product-1.jpg" alt=""/>
+                            </div>
                             <div class="swiper-slide" data-img="images/product-5.jpg">
                                 <img class="hover" src="images/product-5.jpg" alt=""/>
                             </div>
@@ -92,6 +97,9 @@
                                 <img class="hover" src="images/product-4.png" alt=""/>
                             </div>
                         </div>
+                        <div class="swiper-button-next-3"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                        <div class="swiper-button-prev-3"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+
                     </div>
                     <!--END SLIDESHOW HORIZONTAL-->
                     <div class="clearfix"></div>
@@ -121,15 +129,21 @@
                 <script>
                     var swiper = new Swiper('#swiper-vertical', {
                         slidesPerView: 4,
+                        loop: true,
                         direction: 'vertical',
                         spaceBetween: 10,
+                        nextButton: '.swiper-button-next-1',
+                        prevButton: '.swiper-button-prev-1',
                     });
                     var swiper3 = new Swiper('#swiper-horizontal', {
                         slidesPerView: 5,
                         spaceBetween: 10,
+                        nextButton: '.swiper-button-next-3',
+                        prevButton: '.swiper-button-prev-3',
+                        loop: true,
                         breakpoints: {
                             1024: {
-                                slidesPerView: 4,
+                                slidesPerView: 3,
                                 spaceBetween: 10
                             },
                             768: {
@@ -141,20 +155,21 @@
 
                 </script>
                 <!--END SCRIPT SLIDESHOW-->
-            </div>  
+            </div>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="" style="margin-top: 80px">
-                demo demo demo
+                <b> Name Product </b> <br>
+                Price : ......
             </div>
 
         </div>
         <div class="clearfix"></div>
     </div>
 
-    <p style="width: 100%; padding: 150px;"> Content </p>
-    <p style="width: 100%; padding: 150px;"> Content </p>
-    <p style="width: 100%; padding: 150px;"> Content </p>
+    <p style="width: 100%; padding: 150px 30px;"> Content </p>
+    <p style="width: 100%; padding: 150px 30px;"> Content </p>
+    <p style="width: 100%; padding: 150px 30px;"> Content </p>
 
 
 </body>
@@ -162,7 +177,6 @@
 <script>
 
     var get_img = $('.swiper-slide').data("img");
- 
 
     $('.swiper-slide').hover(function () {
         get_img = $(this).data("img");
@@ -173,12 +187,19 @@
 
         new Swiper('#swiper-vertical-2', {
             slidesPerView: 4,
+            loop: true,
             direction: 'vertical',
             spaceBetween: 10,
+            nextButton: '.swiper-button-next-2',
+            prevButton: '.swiper-button-prev-2'
+
         });
         new Swiper('#swiper-horizontal-2', {
             slidesPerView: 5,
             spaceBetween: 10,
+            nextButton: '.swiper-button-next-4',
+            prevButton: '.swiper-button-prev-4',
+            loop: true,
             breakpoints: {
                 1024: {
                     slidesPerView: 4,
@@ -194,36 +215,20 @@
     });
 
     var x = $(".img-product").clone(true);
-    
     x.find('.hover').removeClass().addClass('click');
-
-    x.find('.img_page').addClass('zoom');
-    x.find('.img_page').ready(function () {
-        $('.zoom').zoom({on: 'click'});
-        var clicked = false;
-        $(".zoom").hover(function () {
-            if ($(this).hasClass("zoomed")) {
-                $(this).removeClass("zoomed");
-            } else {
-                $(this).addClass("zoomed");
-            }
-        });
-        $(".zoom").click(function () {
-            if ($(this).hasClass("zoomed")) {
-                $(this).removeClass("zoomed");
-            } else {
-                $(this).addClass("zoomed");
-            }
-        });
-    });
-
+    x.find('#main_img').removeClass();
     x.find('#main_img').removeAttr("id").attr("id", "main_img2");
     x.find('.click').click(function () {
         $('#main_img2').attr('src', $(this).attr('src'));
     });
     x.find('#swiper-vertical').removeAttr("id").attr("id", "swiper-vertical-2");
+    x.find('.swiper-button-next-1').removeClass().addClass('swiper-button-next-2');
+    x.find('.swiper-button-prev-1').removeClass().addClass('swiper-button-prev-2');
+
+
     x.find('#swiper-horizontal').removeAttr("id").attr("id", "swiper-horizontal-2");
-    
+    x.find('.swiper-button-next-3').removeClass().addClass('swiper-button-next-4');
+    x.find('.swiper-button-prev-3').removeClass().addClass('swiper-button-prev-4');
     x.appendTo("#dialog-form");
 
     $(".swiper-slide").hover(function () {
@@ -231,9 +236,5 @@
         $(this).addClass('active');
     });
 
-
     $(".xzoom").xzoom({tint: '#333', Xoffset: 15});
-
-    $(".xzoom").xzoom({zoomHeight: 580, zoomWidth: 500, tint: '#333', Xoffset: 15});
-
 </script>
