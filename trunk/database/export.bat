@@ -1,0 +1,1 @@
+mysqldump -uroot -p fooecom > fooecom.sql
