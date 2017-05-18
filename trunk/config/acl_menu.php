@@ -63,6 +63,15 @@ return [
             ],
             [
                 /*
+                 * Route to mail
+                 */
+                "name"        => "Mail",
+                "route"       => "admin_mail",
+                "link"        => '/admin/mail',
+                "permissions" => ["_superadmin", "_group-editor"]
+            ],
+            [
+                /*
                  * Route to edit the current user profile
                  */
                 "name"        => "",
