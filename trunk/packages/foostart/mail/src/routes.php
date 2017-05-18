@@ -122,5 +122,20 @@ Route::group(['middleware' => ['web']], function () {
             'as' => 'admin_mail.drive',
             'uses' => 'Foostart\Mail\Controllers\Admin\GoogleDriveController@index'
         ]);
+        /*
+            User type
+        */
+        Route::get('admin/mail/user_type_list', [
+            'as'   => 'user_type.list',
+            'uses' => 'Foostart\Mail\Controllers\Admin\UserController@getList'
+        ]);
+        Route::get('/admin/mail/user_type_edit', [
+                'as'   => 'user_type.edit',
+                'uses' => 'Foostart\Mail\Controllers\Admin\UserController@editUser'
+        ]);
+        Route::post('/admin/mail/user_type_edit', [
+                'as'   => 'user_type.edit',
+                'uses' => 'Foostart\Mail\Controllers\Admin\UserController@postEditUser'
+        ]);
     });
 });

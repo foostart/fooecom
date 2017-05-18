@@ -105,6 +105,11 @@ class MailServiceProvider extends ServiceProvider {
                     'url' => URL::route('admin_mail.drive'),
                     "icon" => '<i class="fa fa-google"></i>'
                 ],*/
+                //list
+                trans('mail::mail_admin.user_type') => [
+                    'url' => URL::route('user_type.list'),
+                    "icon" => '<i class="fa fa-users"></i>'
+                ],
             ]);
             //
         });
