@@ -129,13 +129,17 @@ Route::group(['middleware' => ['web']], function () {
             'as'   => 'user_type.list',
             'uses' => 'Foostart\Mail\Controllers\Admin\UserController@getList'
         ]);
-        Route::get('/admin/mail/user_type_edit', [
+        Route::get('admin/mail/user_type_edit', [
                 'as'   => 'user_type.edit',
                 'uses' => 'Foostart\Mail\Controllers\Admin\UserController@editUser'
         ]);
-        Route::post('/admin/mail/user_type_edit', [
+        Route::post('admin/mail/user_type_edit', [
                 'as'   => 'user_type.edit',
                 'uses' => 'Foostart\Mail\Controllers\Admin\UserController@postEditUser'
+        ]);
+        Route::get('admin/mail/user_type_delete', [
+                'as'   => 'user_type.delete',
+                'uses' => 'Foostart\Mail\Controllers\Admin\UserController@deleteUser'
         ]);
     });
 });

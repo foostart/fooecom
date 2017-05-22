@@ -25,6 +25,7 @@ return [
     'inbox' => 'Inbox',
     'contact' => 'Contact',
     'drive' => 'Google Drive',
+    'user_type' => 'Type of user',
 
     /**
      * Form

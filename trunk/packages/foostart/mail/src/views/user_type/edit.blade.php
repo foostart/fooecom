@@ -30,7 +30,6 @@ Admin area: edit user
                         <a href="{!! URL::route('users.profile.edit',['user_id' => $user->id]) !!}" class="btn btn-info pull-right" {!! ! isset($user->id) ? 'disabled="disabled"' : '' !!}><i class="fa fa-user"></i> Edit profile</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
                     <h4>Login data</h4>
                     {!! Form::model($user, [ 'url' => URL::route('users.edit')] )  !!}
                     {{-- Field hidden to fix chrome and safari autocomplete bug --}}
@@ -66,16 +65,6 @@ Admin area: edit user
                     <a href="{!! URL::route('users.delete',['id' => $user->id, '_token' => csrf_token()]) !!}" class="btn btn-danger pull-right margin-left-5 delete">Delete user</a>
                     {!! Form::submit('Save', array("class"=>"btn btn-info pull-right ")) !!}
                     {!! Form::close() !!}
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <h4><i class="fa fa-users"></i> Groups</h4>
-                        @include('mail::user_type.groups')
-
-                        {{-- group permission form --}}
-                        <h4><i class="fa fa-lock"></i> Permission</h4>
-                        {{-- permissions --}}
-                        @include('mail::user_type.perm')
-                    </div>
                 </div>
             </div>
       </div>
